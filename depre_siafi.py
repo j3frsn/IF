@@ -2,7 +2,6 @@
 Script para extrair tabela Excel do Relatório de Depreciação Mensal gerado pelo SIGA-IF Baiano.
 """
 
-from tabula import read_pdf, convert_into
 import pandas as pd
 import pdfplumber
 import os
@@ -14,9 +13,6 @@ for file in files:
     if file.endswith(".pdf"):
         filename = file.split(".")[0]
         break
-
-
-# text_elements = pdf.pq("LTTextLineHorizontal")
 
 filepath = os.path.join(os.getcwd(), filename + ".pdf")
 accounts_dict = {"Conta": [], "Saldo": []}
@@ -55,20 +51,3 @@ outputpath = os.path.join(os.getcwd(), filename + ".xlsx")
 
 df = pd.DataFrame.from_dict(accounts_dict)
 df.to_excel(outputpath)
-
-# convert_into(filepath, outputpath, output_format="xlsx")
-
-# cols = dfs[0].columns.tolist()
-
-# dict = {}
-
-# for col in cols:
-#    rows = dfs[dfs[0].]
-#    print(rows)
-#    break
-
-
-# df = pd.DataFrame(dfs, columns=[""])
-# df
-# cols_idx_list = dfs[0].columns.tolist()
-# tb = dfs[0]
