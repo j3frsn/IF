@@ -6,13 +6,7 @@ import pandas as pd
 import pdfplumber
 import os
 
-files = os.listdir(".")
-filename = ""
-
-for file in files:
-    if file.endswith(".pdf"):
-        filename = file.split(".")[0]
-        break
+filename = "depre_siafi"
 
 filepath = os.path.join(os.getcwd(), filename + ".pdf")
 accounts_dict = {"Conta": [], "Saldo": []}
