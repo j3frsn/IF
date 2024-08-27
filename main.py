@@ -3,7 +3,7 @@ Script para extrair o histórico da conta 12.311.03.03 dos Relatórios de
 Movimentação de Bens do Campus Itaberaba para posterior análise.
 """
 
-from tabula import read_pdf
+from tabula.io import read_pdf
 import pandas as pd
 
 
